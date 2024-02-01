@@ -12,14 +12,14 @@ public class AFactory extends UIFactory {
     @Override
     public Button createButton(String text) {
         ButtonA button = new ButtonA();
-        button.text = text;
+        button.setText(text);
         return button;
     }
 
     @Override
     public Checkbox createCheckbox(String text) {
         CheckboxA checkbox = new CheckboxA();
-        checkbox.text = text;
+        checkbox.setText(text);
         return checkbox;
 
     }
@@ -27,7 +27,7 @@ public class AFactory extends UIFactory {
     @Override
     public TextField createTextField(String text) {
         TextFieldA textField = new TextFieldA();
-        textField.text = text;
+        textField.setText(text);
         return textField;
     }
 

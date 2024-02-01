@@ -5,7 +5,11 @@ import app.UIElement;
 
 public abstract class TextField extends UIElement {
 
-    public String text;
+    @Override
+    public void setText(String text) {
+        super.setText(text);
+    }
+
 
     public abstract void display();
 }
