@@ -9,10 +9,12 @@ import java.util.Base64;
 public class EncryptedPrinter extends PrinterDecorator {
 
     private SecretKey key;
+
     public EncryptedPrinter(Printer printer) throws NoSuchAlgorithmException {
         super(printer);
         this.key = generateKey(128);
     }
+
     @Override
     public void print(String input) {
         try {
@@ -23,8 +25,6 @@ public class EncryptedPrinter extends PrinterDecorator {
             e.printStackTrace();
         }
     }
-
-
 
     public static SecretKey generateKey(int n) throws NoSuchAlgorithmException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
