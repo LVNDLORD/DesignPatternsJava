@@ -63,14 +63,10 @@ public class Gui extends Application {
                 // Ctrl-Z: undo
                 System.out.println("Undo key combination pressed");
                 controller.undo();
-                System.out.println("undo array z" + Controller.history); // debug
-                System.out.println("redo array z" + Controller.redohistory); // debug
             } else if (event.isControlDown() && event.getCode() == KeyCode.Y) {
                 // Ctrl-Y: redo
                 System.out.println("Redo key combination pressed");
                 controller.redo();
-                System.out.println("undo array y" + Controller.history); // debug
-                System.out.println("redo array y" + Controller.redohistory); // debug
             } else {
                 System.out.println("Command not found");
             }
@@ -82,12 +78,14 @@ public class Gui extends Application {
         stage.show();
     }
 
+
+
+
     public void updateGui() {
         // called after restoring state from a Memento
         colorBox1.setColor(controller.getOption(1));
         colorBox2.setColor(controller.getOption(2));
         colorBox3.setColor(controller.getOption(3));
         checkBox.setSelected(controller.getIsSelected());
-        System.out.println(controller.history);
     }
 }

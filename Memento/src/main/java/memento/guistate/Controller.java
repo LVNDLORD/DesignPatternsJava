@@ -7,9 +7,8 @@ public class Controller {
     private Model model;
     private Gui gui;
 
-    // protected static for debug and visual Gui sout in console. private by default
-    protected static List<IMemento> history; // Memento history
-    protected static List<IMemento> redohistory;
+    private List<IMemento> history; // Memento history
+    private List<IMemento> redohistory; //
 
     public Controller(Gui gui) {
         this.model = new Model();
