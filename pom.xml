@@ -11,7 +11,8 @@
     <modules>
         <module>FactoryMethod</module>
         <module>AbstractFactory</module>
-        <module>State</module>
+<!--        <module>State</module>-->
+        <module>Memento</module>
     </modules>
 
     <properties>
