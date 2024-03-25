@@ -1,14 +1,18 @@
 package memento.guistate;
 
+import java.util.Arrays;
+import java.time.LocalTime;
+
 public class Memento implements IMemento {
     private int[] options;
     private boolean isSelected;
+    private String time;
 
-    public Memento(int[] options, boolean isSelected) {
+    public Memento(int[] options, boolean isSelected, String time) {
         this.options = options.clone(); // Copy options array
         this.isSelected = isSelected;
+        this.time = String.valueOf(LocalTime.now());
         System.out.println("Memento created");
-//        System.out.println("undo array" + Controller.history);
     }
 
     public int[] getOptions() {
@@ -17,5 +21,10 @@ public class Memento implements IMemento {
 
     public boolean isSelected() {
         return isSelected;
+    }
+
+    public String getStateMetadata() {
+        // History: color state, checkbox status, timestamp
+        return "Boxes: " + Arrays.toString(options) + ", Checkbox ticked: " + isSelected() + ", time " + time;
     }
 }

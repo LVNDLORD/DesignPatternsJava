@@ -6,9 +6,8 @@ import java.util.List;
 public class Controller {
     private Model model;
     private Gui gui;
-
     private List<IMemento> history; // Memento history
-    private List<IMemento> redohistory; //
+    private List<IMemento> redohistory; // history of actions that can be redone Ctrl+Y
 
     public Controller(Gui gui) {
         this.model = new Model();
@@ -68,5 +67,21 @@ public class Controller {
     private void saveToRedoHistory() {
         IMemento currentState = model.createMemento();
         redohistory.add(currentState);
+    }
+
+    public List<String> getStateHistoryMetadata() {
+        List<String> descriptions = new ArrayList<>();
+        for (IMemento memento : history) {
+            descriptions.add(memento.getStateMetadata());
+        }
+        return descriptions;
+    }
+
+    public void restoreStateFromHistory(int index) {
+        if (index >= 0 && index < history.size()) {
+            IMemento selectedMemento = history.get(index);
+            model.restoreState(selectedMemento);
+            gui.updateGui();
+        }
     }
 }

@@ -3,6 +3,7 @@ package memento.guistate;
 public class Model {
     private int[] options = new int[3];
     private boolean isSelected;
+    private String time;
 
     public void setOption(int optionNumber, int choice) {
         System.out.println("optionNumber: " + optionNumber + " choice: " + choice);
@@ -29,7 +30,7 @@ public class Model {
 
     // method to save the state of the model
     public IMemento createMemento() {
-        return new Memento(options, isSelected);
+        return new Memento(options, isSelected, time);
     }
 
     // method to restore the state of the model
