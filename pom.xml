@@ -13,6 +13,7 @@
         <module>AbstractFactory</module>
 <!--        <module>State</module>-->
         <module>Memento</module>
+        <module>Prototype</module>
     </modules>
 
     <properties>
