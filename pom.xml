@@ -15,6 +15,7 @@
         <module>Memento</module>
         <module>Prototype</module>
         <module>Iterator</module>
+        <module>Facade</module>
     </modules>
 
     <properties>
